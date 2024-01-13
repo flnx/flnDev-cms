@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_shared_seos",
+  "info": {
+    "displayName": "Seo",
+    "icon": "book",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "sharedImage": {
+      "displayName": "SharedImage",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.shared-image"
+    },
+    "metaTitle": {
+      "type": "string",
+      "required": false
+    },
+    "metaDescription": {
+      "type": "string"
+    },
+    "structuredData": {
+      "type": "json"
+    }
+  }
+}

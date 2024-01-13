@@ -1,0 +1,90 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blogs",
+  "info": {
+    "singularName": "blog",
+    "pluralName": "blogs",
+    "displayName": "Blog",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 65
+    },
+    "content": {
+      "type": "blocks",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "featured": {
+      "type": "boolean",
+      "required": false
+    },
+    "categories": {
+      "type": "enumeration",
+      "enum": [
+        "html",
+        "css",
+        "javascript",
+        "react",
+        "nextjs",
+        "frontend",
+        "backend"
+      ],
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "imgUrl": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "readTime": {
+      "type": "integer",
+      "required": true,
+      "max": 20,
+      "min": 0
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 155,
+      "required": true
+    },
+    "Seo": {
+      "displayName": "Seo",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "keywords": {
+      "type": "string",
+      "required": true
+    },
+    "preventIndexing": {
+      "type": "boolean",
+      "default": false
+    },
+    "RelatedBlogs": {
+      "displayName": "RelatedBlogs",
+      "type": "component",
+      "repeatable": false,
+      "component": "blogs.related-blogs"
+    }
+  }
+}
