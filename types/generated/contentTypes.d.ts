@@ -379,7 +379,6 @@ export interface ApiBlogBlog extends Schema.CollectionType {
       Attribute.SetMinMaxLength<{
         maxLength: 65;
       }>;
-    content: Attribute.Blocks & Attribute.Required;
     slug: Attribute.UID<'api::blog.blog', 'title'> & Attribute.Required;
     featured: Attribute.Boolean;
     categories: Attribute.Enumeration<
@@ -403,6 +402,14 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     keywords: Attribute.String & Attribute.Required;
     preventIndexing: Attribute.Boolean & Attribute.DefaultTo<false>;
     RelatedBlogs: Attribute.Component<'blogs.related-blogs'>;
+    content: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'standard';
+        }
+      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
