@@ -396,7 +396,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     description: Attribute.String &
       Attribute.Required &
       Attribute.SetMinMaxLength<{
-        maxLength: 155;
+        maxLength: 255;
       }>;
     Seo: Attribute.Component<'shared.seo'>;
     keywords: Attribute.String & Attribute.Required;
@@ -407,7 +407,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
         'plugin::ckeditor.CKEditor',
         {
           output: 'HTML';
-          preset: 'standard';
+          preset: 'rich';
         }
       >;
     createdAt: Attribute.DateTime;

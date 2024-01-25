@@ -59,7 +59,7 @@
     },
     "description": {
       "type": "string",
-      "maxLength": 155,
+      "maxLength": 255,
       "required": true
     },
     "Seo": {
@@ -86,7 +86,7 @@
       "type": "customField",
       "options": {
         "output": "HTML",
-        "preset": "standard"
+        "preset": "rich"
       },
       "customField": "plugin::ckeditor.CKEditor"
     }
